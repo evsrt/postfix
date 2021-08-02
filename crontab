@@ -1,0 +1,4 @@
+# Look for and purge files older 40 days every 5 hours
+# Delete quarantine items
+# 20 */5 * * * root find /var/lib/amavis/quarantine/* -mtime +40 | xargs rm &> /dev/null
+20 */5 * * * root find /var/lib/amavis/quarantine/* -mtime +40 -delete &> /dev/null
